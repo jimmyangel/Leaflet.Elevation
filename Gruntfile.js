@@ -60,8 +60,9 @@ module.exports = function(grunt) {
                 files: {
                     "src/css/themes/lime.css": "src/css/themes/lime.less",
                     "src/css/themes/purple.css": "src/css/themes/purple.less",
-                    "src/css/themes/steelblue.css": "src/css/themes/steelblue.less"
-                }
+                    "src/css/themes/steelblue.css": "src/css/themes/steelblue.less",
+                    "src/css/themes/blackwhite.css": "src/css/themes/blackwhite.less"
+               }
             },
             production: {
                 options: {
@@ -70,8 +71,9 @@ module.exports = function(grunt) {
                 files: {
                     "tmp/css/themes/lime.min.css": "src/css/themes/lime.less",
                     "tmp/css/themes/purple.min.css": "src/css/themes/purple.less",
-                    "tmp/css/themes/steelblue.min.css": "src/css/themes/steelblue.less"
-                }
+                    "tmp/css/themes/steelblue.min.css": "src/css/themes/steelblue.less",
+                     "src/css/themes/blackwhite.css": "src/css/themes/blackwhite.less"
+               }
             }
         },
         svg2png: {
