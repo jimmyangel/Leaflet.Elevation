@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                     "tmp/css/themes/lime.min.css": "src/css/themes/lime.less",
                     "tmp/css/themes/purple.min.css": "src/css/themes/purple.less",
                     "tmp/css/themes/steelblue.min.css": "src/css/themes/steelblue.less",
-                    "tmp/css/themes/blackwhite.css": "src/css/themes/blackwhite.less"
+                    "tmp/css/themes/blackwhite.min.css": "src/css/themes/blackwhite.less"
                }
             }
         },
