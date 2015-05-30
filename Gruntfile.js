@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'dist/<%= pkg.name %>-<%= pkg.version%>.css': ['tmp/css/themes/lime.min.css', 'tmp/css/themes/steelblue.min.css', 'tmp/css/themes/purple.min.css'],
-                    'src/css/L.Control.Elevation.css': ['src/css/themes/lime.css', 'src/css/themes/steelblue.css', 'src/css/themes/purple.css']
+                    'dist/<%= pkg.name %>-<%= pkg.version%>.css': ['tmp/css/themes/lime.min.css', 'tmp/css/themes/steelblue.min.css', 'tmp/css/themes/blackwhite.min.css', 'tmp/css/themes/purple.min.css'],
+                    'src/css/L.Control.Elevation.css': ['src/css/themes/lime.css', 'src/css/themes/steelblue.css', 'src/css/themes/blackwhite.css', 'src/css/themes/purple.css']
                 }
             },
             minify: {
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                     "tmp/css/themes/lime.min.css": "src/css/themes/lime.less",
                     "tmp/css/themes/purple.min.css": "src/css/themes/purple.less",
                     "tmp/css/themes/steelblue.min.css": "src/css/themes/steelblue.less",
-                     "src/css/themes/blackwhite.css": "src/css/themes/blackwhite.less"
+                    "tmp/css/themes/blackwhite.css": "src/css/themes/blackwhite.less"
                }
             }
         },
