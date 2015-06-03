@@ -79,7 +79,8 @@ module.exports = function(grunt) {
         svg2png: {
             all: {
                 files: [{
-                    src: ['src/images/*.svg'],
+                    cwd: 'src/images/',
+                    src: ['*.svg'],
                     dest: 'dist/images/'
                 }]
             }
