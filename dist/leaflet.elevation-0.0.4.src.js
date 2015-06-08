@@ -553,18 +553,12 @@ L.Control.Elevation = L.Control.extend({
             for (var i = 0; i < coords.length; i++) {
                 var s = new L.LatLng(coords[i][1], coords[i][0]);
                 var e = new L.LatLng(coords[i ? i - 1 : 0][1], coords[i ? i - 1 : 0][0]);
-                var newdist = s.distanceTo(e);
-                if(opts.imperial){
-                    newdist = newdist * 0.621371;
-                }
+                var newdist = opts.imperial ? s.distanceTo(e) * 0.621371 : s.distanceTo(e);
                 dist = dist + Math.round(newdist / 1000 * 100000) / 100000;
                 ele = ele < coords[i][2] ? coords[i][2] : ele;
-                if(opts.imperial){
-                    ele = ele * 3.28084;
-                }
                 data.push({
                     dist: dist,
-                    altitude: coords[i][2],
+                    altitude: opts.imperial ? coords[i][2] * 3.28084 : coords[i][2],
                     x: coords[i][0],
                     y: coords[i][1],
                     latlng: s
@@ -572,6 +566,8 @@ L.Control.Elevation = L.Control.extend({
             }
             this._dist = dist;
             this._data = data;
+
+            ele = opts.imperial ? ele * 3.28084 : ele;
             this._maxElevation = ele;
         }
     },
@@ -588,18 +584,12 @@ L.Control.Elevation = L.Control.extend({
             for (var i = 0; i < coords.length; i++) {
                 var s = coords[i];
                 var e = coords[i ? i - 1 : 0];
-                var newdist = s.distanceTo(e);
-                if(opts.imperial){
-                    newdist = newdist * 0.621371;
-                }
+                var newdist = opts.imperial ? s.distanceTo(e) * 0.621371 : s.distanceTo(e);
                 dist = dist + Math.round(newdist / 1000 * 100000) / 100000;
                 ele = ele < s.meta.ele ? s.meta.ele : ele;
-                if(opts.imperial){
-                    ele = ele * 3.28084;
-                }
                 data.push({
                     dist: dist,
-                    altitude: s.meta.ele,
+                    altitude: opts.imperial ? s.meta.ele * 3.28084 : s.meta.ele,
                     x: s.lng,
                     y: s.lat,
                     latlng: s
@@ -607,6 +597,8 @@ L.Control.Elevation = L.Control.extend({
             }
             this._dist = dist;
             this._data = data;
+
+            ele = opts.imperial ? ele * 3.28084 : ele;
             this._maxElevation = ele;
         }
     },
